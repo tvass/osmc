@@ -2,7 +2,6 @@
 # email@samnazarko.co.uk
 
 #!/bin/bash
-
 . ../common/funcs.sh
 wd=$(pwd)
 tcstub="armv7-toolchain-osmc"
@@ -19,7 +18,7 @@ verify_action
 packages="debootstrap
 dh-make
 devscripts
-qemu
+qemu-system
 binfmt-support
 qemu-user-static"
 for package in $packages

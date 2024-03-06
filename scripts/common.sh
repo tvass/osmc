@@ -66,6 +66,8 @@ function remove_tls_patch()
 
 function emulate_arm()
 {
+	echo qemu-arm-static as ARM interpreter to the kernel
+	echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm-static:' > /proc/sys/fs/binfmt_misc/register
 	echo Copying ARM QEMU binary
 	if [ "$2" == "32" ]; then ARM_EMULATOR="qemu-arm-static"; fi
 	if [ "$2" == "64" ]; then ARM_EMULATOR="qemu-aarch64-static"; fi
